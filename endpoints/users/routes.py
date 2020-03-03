@@ -6,7 +6,7 @@ from . import users
 
 @users.route('/users', methods=['GET'])
 def users_list():
+    mongo.db.testData.insert_one({'Test': 'usuarioDeTest'})
     test_data = mongo.db.testData.find_one()
-    print(test_data)
     return dumps({'juan': test_data['Test']})
 
