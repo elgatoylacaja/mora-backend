@@ -7,5 +7,7 @@ services:
       - "5000:5000"
     links:
       - db
+    volumes:
+      - ./:/mora
   db:
     image: mongo:3.0.2
